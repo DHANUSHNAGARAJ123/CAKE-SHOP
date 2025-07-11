@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dairy Joy Cake Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-left">
+            <img src="assets/logo.png" alt="Dairy Joy Logo">
+            <div class="logo-text">DAIRY JOY</div>
+        </div>
+        <div class="nav-right">
+            <a href="#contact-us">Contact Us</a>
+            <a href="#help">Help</a>
+            <a href="#services">Services</a>
+            <a href="#" onclick="showCartSection()" class="buy-cart" title="Your Cart">
+                <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm0 2zm10-2c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-9.83-3.25L5.27 6H19v2H7.16l.01.01L9 12h9v2H9c-.38 0-.72-.21-.91-.54z"></path></svg>
+            </a>
+            <a href="#" onclick="showOrderHistorySection()" class="order-history-link" title="Order History">
+                History
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <section id="homePageSection" class="page-section">
+            <div class="hero-section">
+                <h1>Welcome to Dairy Joy!</h1>
+                <p>Your one-stop shop for fresh cakes, chocolates, juices, and ice creams.</p>
+            </div>
+            <h2 style="text-align: center; margin-top: 30px;">Product Categories</h2>
+            <div id="productCategories" class="card-container">
+                </div>
+        </section>
+
+        <section id="productListSection" class="page-section" style="display: none;">
+            <nav style="text-align: right; padding: 10px 20px;">
+                <a class="cart-link" href="#" onclick="showCartSection()">🛒 View Cart</a>
+            </nav>
+            <h1 id="productListTitle" style="text-align: center;"></h1>
+            <div id="productItemsContainer" class="card-container">
+                </div>
+            <div id="productListControls">
+                </div>
+        </section>
+
+        <section id="cartSection" class="page-section" style="display: none;">
+            <h1 style="text-align: center;">🛒 Your Cart</h1>
+            <div id="cart-items-container" class="card-container">
+                </div>
+            <div style="text-align: center; margin-top: 20px;">
+                <h2 id="cart-total">Total: ₹0</h2>
+                <button class="card-button clear-button" onclick="clearCart()">Clear Cart</button>
+                <button class="card-button" onclick="checkout()">Checkout</button>
+                <br/><br/>
+                <a class="card-button" href="#" onclick="showCategorySection()">Back to Categories</a>
+            </div>
+        </section>
+
+        <section id="orderHistorySection" class="page-section" style="display: none;">
+            <h1 style="text-align: center;">Order History</h1>
+            <div id="ordersContainer" class="card-container">
+                <p style="text-align:center; font-size:18px;">Loading orders...</p>
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+                <a class="card-button" href="#" onclick="showCategorySection()">Back to Categories</a>
+            </div>
+        </section>
+
+        <div id="orderModal" class="modal">
+            <div class="modal-content">
+                <h2>Confirm Your Order</h2>
+                <ul id="order-summary-list"></ul>
+                <p>Grand Total: <span id="modal-grand-total"></span></p>
+                <button id="confirmBtn">Confirm Order</button>
+                <button id="cancelBtn">Cancel</button>
+            </div>
+        </div>
+
+        <div id="orderSuccessOverlay" class="modal">
+            <h1>Order Successful!</h1>
+            <p>Your Order ID: <span id="displayOrderId"></span></p>
+            <p>Total Amount: <span id="displayTotalAmount"></span></p>
+            <p>Thank you for your purchase!</p>
+            <button id="backHomeBtn">Back to Home</button>
+        </div>
+
+    </main>
+
+    <section class="info-section">
+        <div class="info-content">
+            <div class="info-box" id="services">
+                <h2>Services</h2>
+                <ul>
+                    <li>Fresh Dairy Products</li>
+                    <li>Custom Cakes & Ice Cream Orders</li>
+                    <li>Home Delivery</li>
+                    <li>Event Catering</li>
+                </ul>
+            </div>
+            <div class="info-box" id="help">
+                <h2>Help</h2>
+                <p>
+                    If you need assistance or have questions, please contact our support team at
+                    <a href="mailto:support@dairyjoy.com">support@dairyjoy.com</a> or call +91 98765 43210.
+                </p>
+            </div>
+            <div class="info-box" id="contact-us">
+                <h2>Contact Us</h2>
+                <p>📞 Phone: +91 98765 43210</p>
+                <p>📧 Email: support@dairyjoy.com</p>
+                <p>🏢 Address: 123 Dairy Joy Street, Chennai</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
